@@ -1,9 +1,19 @@
 package com.devsuperior.dsmovie.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_movie")
 public class Movie {
 	
 	/*Tipo classe - Aceita nulo, herança*/
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)  /*Auto incrementado no banco de dados*/
 	private Long id;
 	private String title;
 	private Double score;
